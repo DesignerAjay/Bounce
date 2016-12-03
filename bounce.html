@@ -1,73 +1,158 @@
 <html>
 <head>
 <title></title>
-<script>
-
-</script>
-
 
 <style>
+.wrapper-1 {
+    max-width: 980px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 999;
+    height: 100vh;
+}
 
+.wrapper-1 ul {
+    margin: 0;
+    padding: 15px 0;
+    list-style: none;
+    display: flex;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    background: rgba(0, 3, 51,.1);
+}
+
+.wrapper-1 ul li {width: 25%;box-sizing: border-box;}
+
+.wrapper-1 ul li i {
+    display: block;
+    width: 100%;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    background: url(http://wallpaperfx.com/view_image/dubai-marina-view-1280x1024-wallpaper-18532.jpg) no-repeat;
+    background-size: cover;
+}
+
+.banner {
+    background: url(http://wallpaperfx.com/view_image/dubai-marina-view-1280x1024-wallpaper-18532.jpg) no-repeat;
+    background-size: cover;
+    -moz-filter: blur(10px);
+    -o-filter: blur(10px);
+    -ms-filter: blur(10px);
+    filter: blur(10px);
+    height: 200px;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+}
 
 @import url(http://weloveiconfonts.com/api/?family=fontawesome);
  
 .fa {
- width: 60px;
- display: block;
- text-align: center;
- color:#990000;
- font:normal 45px 'FontAwesome';
- line-height:60px;
- text-rendering: auto;
- -webkit-font-smoothing: antialiased;
+	 width: 60px;
+	 display: block;
+	 text-align: center;
+	 color:#fff;
+	 font:normal 45px 'FontAwesome';
+	 line-height:60px;
+	 text-rendering: auto;
+	 -webkit-font-smoothing: antialiased;
 }
+
 .fa-angle-double-down:before {content: "\f103";}
- 
-.bounce {
- position: absolute;
- bottom: 30px;
- left: 50% ;
- width: 60px;
- height: 60px ;
- margin-left:-30px;
- border: 2px solid #990000;
- -webkit-border-radius:50%;
- -moz-border-radius:50%;
- -ms-border-radius:50%;
- border-radius:50%;
- animation: bounce 2s infinite;
- -webkit-animation: bounce 2s infinite;
- -moz-animation: bounce 2s infinite;
- -o-animation: bounce 2s infinite;
+.fa-apple:before {content:"\f179";}
+.fa-envelope:before {content:"\f0e0";}
+.fa-forward:before {content:"\f04e";}
+
+/*FadeIn animation*/
+@-webkit-keyframes flash {
+    0%, 50%, 100% {opacity: 1;}
+    25%, 75% {opacity: 0;}
 }
- 
+@keyframes flash {
+    0%, 50%, 100% {opacity: 1;}
+    25%, 75% {opacity: 0;}
+}
+
+.flash {
+	 animation: flash 2s infinite;
+	 -webkit-animation: flash 2s infinite;
+	 -moz-animation: flash 2s infinite;
+	 -o-animation: flash 2s infinite;
+}
+
+/* Animatin For Bounce*/
+
 @-webkit-keyframes bounce {
- 0%, 20%, 50%, 80%, 100% {-webkit-transform: translateY(0);} 
- 40% {-webkit-transform: translateY(-30px);}
- 60% {-webkit-transform: translateY(-15px);}
+	10%, 80%{transform:translateY(0);}
+	20% {transform:translateY(-10px);}
+	50%  {transform:translateY(15px);}
 }
- 
-@-moz-keyframes bounce {
- 0%, 20%, 50%, 80%, 100% {-moz-transform: translateY(0);}
- 40% {-moz-transform: translateY(-30px);}
- 60% {-moz-transform: translateY(-15px);}
+
+.bounce{
+	 animation: bounce 2s infinite;
+	 -webkit-animation: bounce 2s infinite;
+	 -moz-animation: bounce 2s infinite;
+	 -o-animation: bounce 2s infinite;
 }
- 
-@-o-keyframes bounce {
- 0%, 20%, 50%, 80%, 100% {-o-transform: translateY(0);}
- 40% {-o-transform: translateY(-30px);}
- 60% {-o-transform: translateY(-15px);}
+
+
+/*  Pulse animation*/
+@keyframes pulse {
+	0% { transform: scale(1); }
+	100% { transform: scale(1.1); }
+	0% { transform: scale(1); }
+
 }
-@keyframes bounce {
- 0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
- 40% {transform: translateY(-30px);}
- 60% {transform: translateY(-15px);}
+.Pulse {
+	animation:pulse 2s infinite;
+	-webkit-animation:pulse 2s infinite;
+	-moz-animation:pulse 2s infinite;
+}
+
+
+/* Shake animation*/
+@-webkit-keyframes shake {
+    0%, 100% {-webkit-transform: translateX(0);}
+    10%, 30%, 50%, 70%, 90% {-webkit-transform: translateX(-10px);}
+    20%, 40%, 60%, 80% {-webkit-transform: translateX(10px);}
+}
+@keyframes shake {
+    0%, 100% {transform: translateX(0);}
+    10%, 30%, 50%, 70%, 90% {transform: translateX(-10px);}
+    20%, 40%, 60%, 80% {transform: translateX(10px);}
+}
+.shake {
+    -webkit-animation: shake 2s infinite;
+    animation: shake 2s infinite;
 }
 
 </style>
 </head>
 <body>
-	<div class="bounce"><i class="fa fa-angle-double-down"></i></div>
+<div class="container">
+	<div class="banner"></div>
+	<div class="wrapper-1">
+	<ul>
+		<li class="flash"><i class="fa fa-angle-double-down"></i></li>
+		<li class="bounce"><i class="fa fa-apple"></i></li>
+		<li class="Pulse "><i class="fa fa-envelope"></i></li>
+		<li class="shake "><i class="fa fa-forward"></i></li>	
+		</ul>
+	</div>
+</div>	
 </body>
-
 </html>
